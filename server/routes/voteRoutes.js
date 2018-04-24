@@ -3,7 +3,7 @@ const Vote = mongoose.model('votes');
 const Team = mongoose.model('teams');
 
 module.exports = (app) => {
-    app.get('/api/vote/:id', (req, res) => {
+    app.post('/api/vote/:id', (req, res) => {
         const user = req.user;
 
         if (user) {
@@ -57,7 +57,11 @@ module.exports = (app) => {
                     })
 
                 } else {
-                    res.status(403).send("<h1>403 Forbidden</h1><p>Vote quota reached for current user</p>")
+                    res.status(403);
+                    res.json({
+                        message: "Vote limit reached for current user",
+                        errCode: 0
+                    })
                 }
             })
         } else {

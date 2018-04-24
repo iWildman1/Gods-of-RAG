@@ -1,15 +1,94 @@
 <!doctype html>
 <html>
     <head>
-        <title>View</title>
+        <title>Gods of RAG - RAG 2018</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/css/normalise.css">
         <link rel="stylesheet" href="/css/styles.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     </head>
     <body>
-        <h1>Express home</h1>
-        <% if (user) { %>
-            <h3>Currently logged in as <%= user.name %></h3>
-        <% } else { %>
-            <h3>Not logged in</h3>
-        <% } %>
+        <header>
+            <div class="container container-large">
+                <div class="row">
+                    <div class="col col-12">
+                        <nav>
+                            <% if (user) { %>
+                                <p>Welcome, <%= user.name %> <img class="profile-img" src="<%= user.pictureUrl %>" alt=""></p>
+                                
+                            <% } else { %>
+                                <p><a href="/auth/facebook">login</a></p>
+                            <% } %>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="counter-container">
+                <h2 class="text-gold">Begins in</h2>
+                <p class="counter text-gold"><span class="counter-days"> 00 </span>:<span class="counter-hours"> 00 </span>:<span class="counter-minutes"> 00 </span>:<span class="counter-seconds"> 00 </span> </p>
+            </div>
+        </header>
+
+        <section class="voting">
+            <div class="container container-small">
+                <div class="row">
+                    <div class="col col-12">
+                        <h1>Voting</h1>
+                        <p class="lead">Click your favourite team to register your vote. You must be logged in to vote, and you can cast a single vote every 15 minutes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container container-med">
+                <div class="team-row">
+                    <div class="team">
+                        <img src="/img/alice-leonie.jpg" data-team-id="0" data-team-name="Alice and Leonie" alt="">
+                    </div>
+                    <div class="team">
+                        <img src="/img/bridie-dafydd.jpg" data-team-id="1" data-team-name="Bridie and Dafydd" alt="">
+                    </div>
+                    <div class="team">
+                        <img src="/img/doug-henry.jpg" data-team-id="2" data-team-name="Doug and Henry" alt="">
+                    </div>
+                </div>
+                <div class="team-row">
+                    <div class="team">
+                        <img src="/img/janice-nathaniel.jpg" data-team-id="3" data-team-name="Janice and Nathaniel" alt="">
+                    </div>
+                    <div class="team">
+                        <img src="/img/jordan-dave.jpg" data-team-id="4" data-team-name="Jordan and Dave" alt="">
+                    </div>
+                    <div class="team">
+                        <img src="/img/tom-ollie.jpg" data-team-id="5" data-team-name="Tom and Ollie" alt="">
+                    </div>
+                </div>
+                <div class="team-row">
+                    <div class="team">
+
+                    </div>
+                    <div class="team">
+                        <img src="/img/martins-amaan.jpg" data-team-id="6" data-team-name="Martins and Amaan" alt="">
+                    </div>
+                    <div class="team">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal">
+            <h3>It's not you, it's us...</h3>
+            <p>Something went wrong with on our end. Please try again, and contact a team member if this error persists</p>
+            <div class="buttons-row">
+                <div class="button-item-one">
+                    <a class="button button-gold" href="/">Back</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/bundle.js"></script>
     </body>
 </html>

@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Team = mongoose.model('teams');
 
 module.exports = (app) => {
-    app.get('/api/team/upload/:name', (req, res) => {
+
+    app.post('/api/team/upload/:name', (req, res) => {
         const name = req.params.name;
         let teams = 0;
 
