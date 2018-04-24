@@ -5,6 +5,19 @@ module.exports = (app) => {
         scope: ['public_profile', 'email']
     }));
     
-    app.get('/auth/facebook/callback', passport.authenticate('facebook'))
+    app.get('/auth/facebook/callback', passport.authenticate('facebook'), (req, res) => {
+        res.redirect('/user/current');
+    });
+
+    app.get('/user/current', (req, res) => {
+        res.render('index', {
+            user: req.user
+        })
+    } );
+
+    app.get('/user/logout', (req, res) => {
+        req.logout();
+        res.redirect('/user/current');
+    });
 }
 

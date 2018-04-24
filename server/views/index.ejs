@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>View</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <h1>Express home</h1>
+        <% if (user) { %>
+            <h3>Currently logged in as <%= user.name %></h3>
+        <% } else { %>
+            <h3>Not logged in</h3>
+        <% } %>
+    </body>
+</html>
