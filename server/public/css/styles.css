@@ -113,7 +113,7 @@ header {
 }
 
 header nav {
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 header nav p {
@@ -121,6 +121,17 @@ header nav p {
     color: white;
     font-size: 2rem;
     font-family: 'Gelio';
+}
+
+.donate {
+    float: left;
+    padding-top: 20px;
+}
+
+@media (max-width: 630px) {
+    .donate {
+        padding-top: 32px;
+    }
 }
 
 header nav p a {
@@ -144,6 +155,42 @@ header .counter-container {
     transform: translateX(-50%);
     text-align: center;
     width: 100%;
+}
+
+header .container-header {
+    width: 95%;
+}
+
+@media(max-width: 1024px) {
+    header {
+        height: 500px;
+    }
+
+    header .counter {
+        font-size: 3.5rem;
+    }
+}
+
+@media(max-width: 630px) {
+    header {
+        height: 300px;
+    }
+
+    header h2 {
+        font-size: 2rem;
+    }
+
+    header .counter {
+        font-size: 2rem;
+    }
+
+    header nav p {
+        font-size: 1.2rem;
+    }
+
+    header nav p .profile-img {
+        top: 15px;
+    }
 }
 
 /* === VOTING === */
@@ -174,6 +221,28 @@ header .counter-container {
 .team img {
     max-width: 100%;
     cursor: pointer;
+}
+
+@media(max-width: 700px) {
+
+    .voting h1 {
+        font-size: 3.7rem;
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .voting .lead {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .team {
+        flex: 0 0 100%;
+    }
+
+    .team-row {
+        flex-wrap: wrap;
+    }
 }
 
 /* === MODAL === */

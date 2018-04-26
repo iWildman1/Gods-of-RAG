@@ -3,6 +3,10 @@ const Team = mongoose.model('teams');
 
 module.exports = (app) => {
 
+    app.get('/donate', (req, res) => {
+        res.redirect('https://www.justgiving.com/teams/godsofrag');
+    })
+
     app.post('/api/team/upload/:name', (req, res) => {
         const name = req.params.name;
         let teams = 0;

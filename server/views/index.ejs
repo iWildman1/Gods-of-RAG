@@ -13,15 +13,16 @@
     </head>
     <body>
         <header>
-            <div class="container container-large">
+            <div class="container container-large container-header">
                 <div class="row">
                     <div class="col col-12">
                         <nav>
+
                             <% if (user) { %>
-                                <p>Welcome, <%= user.name %> <img class="profile-img" src="<%= user.pictureUrl %>" alt=""></p>
+                                <p><a class="donate"  href="/donate"> Donate</a> Welcome, <%= user.name %> <img class="profile-img" src="<%= user.pictureUrl %>" alt=""></p>
                                 
                             <% } else { %>
-                                <p><a href="/auth/facebook">login</a></p>
+                                <p><a class="donate" href="/donate"> Donate</a><a href="/auth/facebook">login</a></p>
                             <% } %>
                         </nav>
                     </div>
